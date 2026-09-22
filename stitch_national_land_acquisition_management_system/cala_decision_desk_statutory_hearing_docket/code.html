@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-fixed": "#0e1c2f",
+        "tertiary-fixed": "#ffdcc3",
+        "on-error-container": "#93000a",
+        "on-secondary-container": "#3b5a7f",
+        "inverse-surface": "#2d3133",
+        "outline": "#75777d",
+        "primary-fixed": "#d6e3fe",
+        "primary-container": "#0e1c2f",
+        "on-tertiary-fixed-variant": "#6e3900",
+        "on-primary": "#ffffff",
+        "secondary-fixed": "#d3e4ff",
+        "tertiary-container": "#2f1500",
+        "inverse-on-surface": "#eff1f3",
+        "surface-container": "#eceef0",
+        "error": "#ba1a1a",
+        "on-primary-container": "#77849c",
+        "surface-bright": "#f7f9fb",
+        "secondary-fixed-dim": "#aac9f4",
+        "on-primary-fixed-variant": "#3a475c",
+        "error-container": "#ffdad6",
+        "surface-dim": "#d8dadc",
+        "surface-container-highest": "#e0e3e5",
+        "surface-container-low": "#f2f4f6",
+        "background": "#f7f9fb",
+        "primary": "#000000",
+        "surface-tint": "#525f75",
+        "secondary-container": "#b3d1fd",
+        "on-tertiary-fixed": "#2f1500",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-container": "#c76c00",
+        "on-error": "#ffffff",
+        "on-secondary": "#ffffff",
+        "surface-container-high": "#e6e8ea",
+        "primary-fixed-dim": "#bac7e1",
+        "on-tertiary": "#ffffff",
+        "on-surface-variant": "#44474c",
+        "tertiary-fixed-dim": "#ffb77d",
+        "outline-variant": "#c5c6cd",
+        "surface": "#f7f9fb",
+        "on-secondary-fixed-variant": "#29486d",
+        "on-background": "#191c1e",
+        "on-secondary-fixed": "#001c38",
+        "tertiary": "#000000",
+        "secondary": "#426086",
+        "surface-variant": "#e0e3e5",
+        "inverse-primary": "#bac7e1",
+        "on-surface": "#191c1e"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-md": "0.75rem",
+        "gutter": "1rem",
+        "margin": "1rem",
+        "space-2xs": "0.125rem",
+        "margin-tablet": "1.5rem",
+        "space-2xl": "2rem",
+        "space-lg": "1rem",
+        "space-sm": "0.5rem",
+        "space-xl": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xs": "0.25rem",
+        "gutter-desktop": "1.5rem"
+      },
+      "fontFamily": {
+        "headline-md": ["IBM Plex Sans"],
+        "headline-lg": ["IBM Plex Sans"],
+        "label-md": ["JetBrains Mono"],
+        "body-lg": ["IBM Plex Sans"],
+        "label-lg": ["IBM Plex Sans"],
+        "body-md": ["IBM Plex Sans"],
+        "body-sm": ["IBM Plex Sans"],
+        "label-sm": ["JetBrains Mono"],
+        "display": ["IBM Plex Sans"],
+        "cadastral-code": ["JetBrains Mono"],
+        "headline-sm": ["IBM Plex Sans"],
+        "headline-lg-mobile": ["IBM Plex Sans"]
+      },
+      "fontSize": {
+        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+        "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+        "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+        "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+        "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "cadastral-code": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between pt-space-md pb-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center gap-space-sm"><div class="w-2.5 h-7 bg-primary rounded"></div><div><span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant block">Sovereign Land Grid</span><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface block">NLAMS Central</span></div></div><div class="px-space-lg"><div class="p-space-sm bg-surface-container-low rounded flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Sovereignty Tier</span><span class="font-label-md text-label-md px-space-xs py-space-2xs bg-surface-container text-on-surface rounded">UNION GOVT</span></div></div><nav class="flex flex-col gap-space-2xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-headline-sm shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="executive-gis-command" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span class="font-body-md text-body-md">Executive GIS Command</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="requisition-and-scrutiny" href="#"><span class="material-symbols-outlined text-[18px]">fact_check</span><span class="font-body-md text-body-md">Requisition &amp; Scrutiny</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="cadastral-gis-studio" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="font-body-md text-body-md">Cadastral GIS Studio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="compensation-and-dbt" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="font-body-md text-body-md">Compensation &amp; DBT</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded transition-all group bg-primary-container text-on-primary font-headline-sm shadow-sm" data-path="cala-decision-desk" href="#"><span class="material-symbols-outlined text-[18px]">gavel</span><span class="font-body-md text-body-md">CALA Decision Desk</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="p-space-sm bg-surface-container-low rounded flex flex-col gap-space-2xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant">NIC GATEWAY</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><span class="font-cadastral-code text-cadastral-code text-on-surface truncate">SEC-NODE: DL-DEL-NIC-09</span></div><div class="px-space-sm text-center"><span class="font-label-sm text-label-sm text-on-surface-variant">NLAMS v4.8.2-ST</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><img alt="NLAMS Sovereign Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XKvxeR-zIPl4ZC1MRv2M84hUphBD4DaldLQt6h3dPv3U1oZujshWQF2I5a3DRXwXiPiInXVrEMlgfxFEc9izRsor4hnxrsTww6A_9lNZLOt9xLZDydSMWKWqVQHRRutcL12UH9bp-7Ng-iUESia2-LeXhNr6LkoZpFT2mS76yP5MKIYc26DD0oJ_nQc0SNw7mP4oUKVQs4OVKFEqTOhSLB-mbD_bpCt0LLGrm2ZTfZdam9jf8PZi3HEk9I"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface">राष्ट्रीय भूमि अधिग्रहण एवं प्रबंधन प्रणाली</span><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">NLAMS - Sovereign Portal</span></div><div class="h-7 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-2xs rounded"><span class="material-symbols-outlined text-[15px] text-secondary">account_balance</span><span class="font-label-lg text-label-lg text-on-surface">MoRTH / NHAI • Central Nodal Authority</span></div><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-space-2xs rounded"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">NIC Cloud Connected • 28 States &amp; UTs Live</span></div></div><div class="flex items-center gap-space-lg"><div class="relative w-80"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-9 pr-space-sm py-space-xs bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded shadow-[0_1px_3px_0_rgba(11,25,44,0.08)] focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Project ID, DPR No, Khasra, Gazette No..." type="text"/></div><div class="relative flex items-center justify-center p-space-xs rounded hover:bg-surface-container text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></div><div class="h-7 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface">Shri R. K. Sharma, IAS</span><span class="font-label-sm text-label-sm text-on-surface-variant">Joint Secretary - Land Resources</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWWGRJm78yPxfuZoCEEaFykpQWJK-hrZIZ4cnW1MhRN_LCnuoEclFIgv2_k-w-iVbSpIyZJeKN9EhhKpGoZOOC7296JPiu3PZ7MOHc328k_BpC4ezQCtMqsWWzjYBDSmTU4mxGUBT7I_F5HirhEQkyQ3VWsIgfoNgefiBis6bgh-1mv0x6nstahHhIp7HjfK1m6sM4xiZSBDb-gGiQK9faGrrqFIJfbDZ5zeAPprKVzOEYmLtOvKYyiw"/></div></div></header><main class="w-full pt-20 flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Sovereign Sub-Bar (Administrative Jurisdiction Header) -->
+<div class="w-full bg-primary-container text-on-primary py-space-md px-space-xl shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-on-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px] text-secondary-fixed">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Judicial Bench • CALA Court No. 02</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-primary/70">PUNJAB REVENUE JURISDICTION</span>
+</div>
+<h1 class="font-headline-md text-headline-md tracking-tight text-on-primary">
+            Office of the District Magistrate &amp; Competent Authority (Land Acquisition) — Ludhiana
+          </h1>
+</div>
+</div>
+<!-- Live Bench Status & Session Indicators -->
+<div class="flex items-center gap-space-sm">
+<div class="bg-surface-container-lowest/10 px-space-md py-space-xs rounded flex items-center gap-space-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">meeting_room</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary-fixed leading-tight">ACTIVE QUORUM</span>
+<span class="font-label-md text-label-md text-on-primary">DM Court Room No. 2 • Ludhiana</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/10 px-space-md py-space-xs rounded flex items-center gap-space-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary-fixed leading-tight">BENCH DATE</span>
+<span class="font-label-md text-label-md text-on-primary">14 May 2025 • Daily Cause List</span>
+</div>
+</div>
+<div class="bg-secondary px-space-md py-space-xs rounded flex items-center gap-space-xs text-on-secondary shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-secondary animate-ping"></span>
+<span class="font-label-md text-label-md uppercase tracking-wider">BENCH IN SESSION</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Ribbon -->
+<div class="mt-space-md pt-space-sm bg-surface-container-lowest/5 rounded px-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">format_list_numbered</span>
+<span class="font-label-md text-label-md text-secondary-fixed">14 Hearings Scheduled Today</span>
+</div>
+<div class="h-3 w-px bg-on-primary/20"></div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed-dim">rule</span>
+<span class="font-body-sm text-body-sm text-on-primary/90">6 Section 15 Objections</span>
+</div>
+<div class="h-3 w-px bg-on-primary/20"></div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed-dim">balance</span>
+<span class="font-body-sm text-body-sm text-on-primary/90">8 Compensation Reference Petitions</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">history_edu</span>
+<span>Cause List Ref: LDH-CALA/2025-05-14/R02</span>
+</div>
+</div>
+</div>
+<div class="px-space-xl py-space-lg flex flex-col gap-space-xl">
+<!-- Statutory Timeline Countdown & Lapse Prevention Dashboard (Section 25 / LARR Rule 18) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-high px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">timer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">
+            Critical Statutory Deadlines &amp; Lapse Safeguard Engine (Section 25 / RFCTLARR Rule 18)
+          </span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-error">warning</span>
+<span>Automatic Lapse upon expiry of 12 months from Sec 19 Declaration</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Project 1: NH-44 Widening Bypass -->
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">PKG-02 • HIGHWAY INFRA</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs">NH-44 Widening Bypass (Pkg 2)</h2>
+<span class="font-label-md text-label-md text-on-surface-variant mt-space-2xs">CALA/LDH/NH-44/2024-PKG02</span>
+</div>
+<span class="px-space-xs py-space-2xs bg-surface-container-low text-on-surface font-label-sm text-label-sm rounded uppercase flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              On Track
+            </span>
+</div>
+<div class="my-space-md flex items-center justify-between gap-space-md bg-surface-container-low p-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sec 19 Published</span>
+<span class="font-cadastral-code text-cadastral-code text-on-surface">180 Days Ago</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">14 Nov 2024</span>
+</div>
+<!-- Circular Dial Representation -->
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="49, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md font-bold text-on-surface">185d</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[9px] -mt-1">REMAIN</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Sec 23 Award Declaration window</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">15 Nov 2025 (Max)</span>
+</div>
+</div>
+<!-- Project 2: WDFC (Ludhiana Section) - URGENT -->
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error uppercase flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[13px]">alarm</span>
+                Urgent Attention • Sec 11 Lapse Threat
+              </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs">Western DFC (Ludhiana Section)</h2>
+<span class="font-label-md text-label-md text-on-surface-variant mt-space-2xs">CALA/LDH/WDFC-REV/2024-09</span>
+</div>
+<span class="px-space-xs py-space-2xs bg-error-container text-on-error-container font-label-sm text-label-sm rounded uppercase flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+              22 Days Left
+            </span>
+</div>
+<div class="my-space-md flex items-center justify-between gap-space-md bg-surface-container-low p-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error font-semibold uppercase">Sec 15 Hearing Closes In</span>
+<span class="font-cadastral-code text-cadastral-code text-error">7 Days (21 May)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Sec 19 Declaration pending</span>
+</div>
+<!-- Urgent dial -->
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-error" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md font-bold text-error">22d</span>
+<span class="font-label-sm text-label-sm text-error text-[9px] -mt-1">CRITICAL</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-error font-label-sm text-label-sm">
+<span>Requires Sec 15(2) Report dispatch</span>
+<span class="font-bold underline cursor-pointer hover:text-on-error-container">Trigger Express Notice</span>
+</div>
+</div>
+<!-- Project 3: Ludhiana Metro Corridor-I -->
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">URBAN TRANSIT • STATE SPECIAL PROJ</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-space-2xs">Ludhiana Metro Rail Corridor-I</h2>
+<span class="font-label-md text-label-md text-on-surface-variant mt-space-2xs">CALA/LDH/METRO-C1/2025</span>
+</div>
+<span class="px-space-xs py-space-2xs bg-surface-container-low text-on-surface font-label-sm text-label-sm rounded uppercase flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Satisfactory
+            </span>
+</div>
+<div class="my-space-md flex items-center justify-between gap-space-md bg-surface-container-low p-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Joint Measurement Survey</span>
+<span class="font-cadastral-code text-cadastral-code text-on-surface">Ward 14 &amp; 19 Pending</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Sec 11 gazette draft prepared</span>
+</div>
+<!-- Dial -->
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="20, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-label-md text-label-md font-bold text-on-surface">310d</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[9px] -mt-1">ACTIVE</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Tehsildar joint inspection</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Scheduled 18 May 2025</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split: Left Cause List Table (7 cols) + Right Quasi-Judicial Drafting Workbench (5 cols) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl">
+<!-- Left Column: Today's Cause List & Hearing Docket (7 Columns) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col">
+<!-- Table Panel Header with Filter Strip -->
+<div class="p-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">event_note</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Quasi-Judicial Hearing Cause List</h3>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-space-2xs rounded text-on-surface font-semibold">14 Active Matters</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-2xs rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">filter_alt</span>
+                All Sections
+              </button>
+<button class="px-space-sm py-space-2xs rounded bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">print</span>
+                Daily Cause Sheet
+              </button>
+</div>
+</div>
+<!-- Cause List Rows -->
+<div class="flex flex-col">
+<!-- Row 1: Active In-Hearing Case (Gurdeep Singh) -->
+<div class="p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer border-l-4 border-l-secondary relative" id="case-row-1">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-cadastral-code text-cadastral-code text-secondary font-bold">CALA/LDH/15-OBJ/2025/104</span>
+<span class="font-label-sm text-label-sm px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface">ITEM #01</span>
+<span class="px-space-xs py-space-2xs bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm rounded uppercase flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                      Arguments In Progress
+                    </span>
+</div>
+<div class="mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Gurdeep Singh &amp; 12 Others</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-space-xs">vs. National Highways Authority of India (NHAI)</span>
+</div>
+<div class="mt-space-2xs text-on-surface-variant font-body-sm text-body-sm line-clamp-2">
+<strong class="text-on-surface">Subject Matter:</strong> Formal objection under Section 15(1) regarding acquisition of Class-I multi-crop canal-irrigated farmland (Khasra No. 412/1, 412/2) and 1 ancestral residential dwelling in Village Baddowal.
+                  </div>
+<div class="mt-space-sm flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">map</span>
+                      Delhi-Amritsar-Katra Expressway
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                      Advocate S. S. Majithia (for Petitioner)
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                      Began: 10:30 AM (Elapsed: 42m)
+                    </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-space-xs flex-shrink-0">
+<button class="px-space-md py-space-xs bg-primary text-on-primary font-headline-sm text-headline-sm rounded hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-space-2xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+                    Record Order
+                  </button>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Active in Workbench</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high w-full"></div>
+<!-- Row 2: Jaswant Kaur vs Manpreet Singh (Sec 64 Referral) -->
+<div class="p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" id="case-row-2">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-cadastral-code text-cadastral-code text-on-surface-variant font-bold">CALA/LDH/SEC-64/2025/088</span>
+<span class="font-label-sm text-label-sm px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface">ITEM #02</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                      Referred to LARR Authority (Sec 64)
+                    </span>
+</div>
+<div class="mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Jaswant Kaur vs. Manpreet Singh &amp; Anr.</span>
+</div>
+<div class="mt-space-2xs text-on-surface-variant font-body-sm text-body-sm line-clamp-2">
+<strong class="text-on-surface">Subject Matter:</strong> Inter-se Title &amp; Apportionment Dispute over Khasra 892/3 (Area: 1.45 Hectares). Conflicting registered wills and partition claims prevent determination of lawful recipient.
+                  </div>
+<div class="mt-space-sm flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">account_balance</span>
+                      Disputed Sum: ₹1,84,20,000 in Escrow
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+                      Village Sunet
+                    </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-space-xs flex-shrink-0">
+<button class="px-space-sm py-space-xs bg-surface-container-high text-on-surface font-label-lg text-label-lg rounded hover:bg-surface-container-highest transition-colors flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                    View Reference Order
+                  </button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hearing Concluded</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high w-full"></div>
+<!-- Row 3: Village Baddowal Rate Determination -->
+<div class="p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer" id="case-row-3">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-cadastral-code text-cadastral-code text-on-surface-variant font-bold">CALA/LDH/AW-DET/2025/032</span>
+<span class="font-label-sm text-label-sm px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface">ITEM #03</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded uppercase flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Ready for Pronouncement
+                    </span>
+</div>
+<div class="mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Village Baddowal Landowners Assc. vs. State of Punjab</span>
+</div>
+<div class="mt-space-2xs text-on-surface-variant font-body-sm text-body-sm line-clamp-2">
+<strong class="text-on-surface">Subject Matter:</strong> Determination of baseline market rate under Section 26. Conflict between notified Collector Circle Rate (₹65L/acre) vs. average of top 50% registered sale deeds in preceding 3 years (₹82.5L/acre).
+                  </div>
+<div class="mt-space-sm flex flex-wrap items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">analytics</span>
+                      Sale Deed Survey Sample: 48 Deeds
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">assignment_turned_in</span>
+                      Tehsildar Vetted
+                    </span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-space-xs flex-shrink-0">
+<button class="px-space-sm py-space-xs bg-secondary text-on-secondary font-label-lg text-label-lg rounded hover:opacity-90 transition-opacity flex items-center gap-space-2xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                    Sign Award Order
+                  </button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Awaiting Final Pronouncement</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cause List Footer -->
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Displaying 3 of 14 matters • Court Stenographer: Harpreet Kaur (NIC Digital Scribe)</span>
+<div class="flex items-center gap-space-xs">
+<button class="p-space-2xs rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="font-label-sm text-label-sm font-bold">1 / 5</span>
+<button class="p-space-2xs rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Statutory Guidelines Callout for CALA / DM -->
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex items-start gap-space-md">
+<span class="material-symbols-outlined text-[24px] text-secondary">verified_user</span>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Quasi-Judicial Standing Order (LARR Act 2013 Sec 15-25)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Every objection registered under Section 15(1) shall be heard in person. The CALA must make an enquiry into agricultural viability and alternative route feasibility, submitting recommendations in the Section 15(2) Report to the Union/State Ministry within strict statutory limits.
+            </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Digital Quasi-Judicial Workbench & Order Drafting Engine (5 Columns) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col">
+<!-- Workbench Header -->
+<div class="bg-primary-container text-on-primary p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">fact_check</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-secondary-fixed">Bench Workbench &amp; Drafting Engine</span>
+<h3 class="font-headline-sm text-headline-sm text-on-primary leading-tight">Dossier: Gurdeep Singh &amp; 12 Ors</h3>
+</div>
+</div>
+<span class="font-label-md text-label-md px-space-xs py-space-2xs bg-secondary text-on-secondary rounded font-bold">CASE #104</span>
+</div>
+<!-- Dossier Snapshot Accordion / Tabbed Evidence Preview -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Visual Evidence: Drone Footprint & Alignment Overlap -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">flight</span>
+                  Drone Aerial Orthomosaic &amp; Expressway Centerline
+                </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Survey D-714</span>
+</div>
+<div class="relative rounded overflow-hidden shadow-sm bg-surface-container h-44 group">
+<img class="w-full h-full object-cover" data-alt="High-resolution aerial drone orthomosaic survey photo of agricultural fields in Punjab with high-contrast red vector centerline showing the Delhi Amritsar Katra Expressway proposed alignment, intersecting green fertile irrigated farmland with a small ancestral dwelling compound highlighted in yellow statutory boundary markers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiXMHnmzaY_U9680RFfOiN8XnHt7qDfA4otFgdKDGnPZjsSCd5HSQYtFi0ignhnxThmPZV7CtNUiNbxxv3RX8uC9VM_YdGI-H-KHO2ROYUVYXmkEHkytNMANFsrgniAvQWdtPFV_Qq7ti3vVjOtxtD_gLwTMGSkdSJqvwLgjQuo8AgBDBigKAFxgDya7FZI_BOk17QTUaG785NfUTnbxfrPXKX5nV5v00zBIDX3417I7J14gotz_H93Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-space-sm text-on-primary">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span>Village Baddowal • Khasra 412/1 &amp; 412/2</span>
+<span class="bg-primary px-space-xs py-space-2xs rounded">Dwelling Clears ROW by 14.8m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Revenue Evidence Strips (Jamabandi + Geo-verification) -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px] text-secondary">description</span>
+                  Jamabandi Record (2023-24)
+                </span>
+<span class="font-label-md text-label-md text-on-surface mt-space-2xs font-semibold">Khewat 84, Khatoni 112</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Class: Nahri (Canal-fed 100%)</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+                  Geo-Tag Verification
+                </span>
+<span class="font-label-md text-label-md text-on-surface mt-space-2xs font-semibold">30.8712° N, 75.8241° E</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Verified by SDM West Ludhiana</span>
+</div>
+</div>
+<!-- Statutory Determination Checklist -->
+<div class="p-space-sm bg-surface-container-low rounded flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
+                Mandatory CALA Statutory Checklist (Sec 15)
+              </span>
+<div class="flex flex-col gap-space-xs mt-space-2xs">
+<label class="flex items-center gap-space-sm text-on-surface cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary" disabled="" type="checkbox"/>
+<span class="font-body-sm text-body-sm">Section 15(1) filed within 60 days of Sec 11(1) publication</span>
+</label>
+<label class="flex items-center gap-space-sm text-on-surface cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary" disabled="" type="checkbox"/>
+<span class="font-body-sm text-body-sm">Personal hearing granted to all interested landholders</span>
+</label>
+<label class="flex items-center gap-space-sm text-on-surface cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary" id="chk-nhai-report" type="checkbox"/>
+<span class="font-body-sm text-body-sm font-semibold text-secondary">Alignment deviation feasibility report submitted by NHAI PD</span>
+</label>
+</div>
+</div>
+<!-- Judicial Hearing Minute Scribe Box -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold" for="court-dictation">
+                  Court Dictation &amp; Proceeding Notes (Live Scribe)
+                </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                  Mic Active (Hindi/Punjabi Audio-to-Text)
+                </span>
+</div>
+<textarea class="w-full p-space-sm bg-surface text-on-surface font-body-sm text-body-sm rounded focus:outline-none focus:ring-2 focus:ring-secondary shadow-inner resize-none" id="court-dictation" rows="4">Present: Shri S. S. Majithia, Advocate for objectors. Shri Naresh Kumar, NHAI Project Director. Objectors demonstrate that realignment by 22 meters northwards along government canal bandh will preserve both tube-well pump-houses and the ancestral dwelling. NHAI PD directed to submit technical curve clearance within 48 hours.</textarea>
+</div>
+<!-- Digital Signature Token State & Authentication Ribbon -->
+<div class="p-space-sm bg-surface-container rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">vpn_key</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">e-Mudhra DSC Token 2048-bit Online</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Signatory: Sh. R. K. Sharma, IAS (DM / CALA Ludhiana)</span>
+</div>
+</div>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-secondary font-cadastral-code text-cadastral-code font-bold">PIN VERIFIED</span>
+</div>
+<!-- Primary Action Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="p-space-sm bg-primary text-on-primary font-headline-sm text-headline-sm rounded hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                Apply DSC &amp; Issue Order
+              </button>
+<button class="p-space-sm bg-secondary text-on-secondary font-headline-sm text-headline-sm rounded hover:opacity-95 transition-opacity flex items-center justify-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+                Draft Sec 15(2) Report
+              </button>
+<button class="p-space-sm bg-surface-container-high text-on-surface font-label-lg text-label-lg rounded hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+                Upload AV Hearing Reel
+              </button>
+<button class="p-space-sm bg-surface-container-high text-on-surface font-label-lg text-label-lg rounded hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+                e-Summons / SMS Gateway
+              </button>
+</div>
+</div>
+</div>
+<!-- Quick Calendar & Next Hearing Scheduler -->
+<div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">next_plan</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Adjournment Slot</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Next Cause Date: 21 May 2025</span>
+</div>
+</div>
+<button class="px-space-sm py-space-xs bg-surface-container text-on-surface font-label-md text-label-md rounded hover:bg-surface-container-high transition-colors">
+            Reserve Bench Slot
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm px-space-xl border-t-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>LARR Act 2013 &amp; RFCTLARR Rules Compliant</span><div class="h-3 w-px bg-surface-container-highest"></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">account_balance_wallet</span>PFMS Portal Gateway Active</span><div class="h-3 w-px bg-surface-container-highest"></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">shield</span>GeM / NIC Security Certified</span></div><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant">Ministry of Rural Development &amp; MoRTH • Government of India</span></div></div></footer></div></body></html>

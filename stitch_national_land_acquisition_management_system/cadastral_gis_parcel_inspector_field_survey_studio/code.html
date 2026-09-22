@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-fixed": "#0e1c2f",
+        "tertiary-fixed": "#ffdcc3",
+        "on-error-container": "#93000a",
+        "on-secondary-container": "#3b5a7f",
+        "inverse-surface": "#2d3133",
+        "outline": "#75777d",
+        "primary-fixed": "#d6e3fe",
+        "primary-container": "#0e1c2f",
+        "on-tertiary-fixed-variant": "#6e3900",
+        "on-primary": "#ffffff",
+        "secondary-fixed": "#d3e4ff",
+        "tertiary-container": "#2f1500",
+        "inverse-on-surface": "#eff1f3",
+        "surface-container": "#eceef0",
+        "error": "#ba1a1a",
+        "on-primary-container": "#77849c",
+        "surface-bright": "#f7f9fb",
+        "secondary-fixed-dim": "#aac9f4",
+        "on-primary-fixed-variant": "#3a475c",
+        "error-container": "#ffdad6",
+        "surface-dim": "#d8dadc",
+        "surface-container-highest": "#e0e3e5",
+        "surface-container-low": "#f2f4f6",
+        "background": "#f7f9fb",
+        "primary": "#000000",
+        "surface-tint": "#525f75",
+        "secondary-container": "#b3d1fd",
+        "on-tertiary-fixed": "#2f1500",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-container": "#c76c00",
+        "on-error": "#ffffff",
+        "on-secondary": "#ffffff",
+        "surface-container-high": "#e6e8ea",
+        "primary-fixed-dim": "#bac7e1",
+        "on-tertiary": "#ffffff",
+        "on-surface-variant": "#44474c",
+        "tertiary-fixed-dim": "#ffb77d",
+        "outline-variant": "#c5c6cd",
+        "surface": "#f7f9fb",
+        "on-secondary-fixed-variant": "#29486d",
+        "on-background": "#191c1e",
+        "on-secondary-fixed": "#001c38",
+        "tertiary": "#000000",
+        "secondary": "#426086",
+        "surface-variant": "#e0e3e5",
+        "inverse-primary": "#bac7e1",
+        "on-surface": "#191c1e"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-md": "0.75rem",
+        "gutter": "1rem",
+        "margin": "1rem",
+        "space-2xs": "0.125rem",
+        "margin-tablet": "1.5rem",
+        "space-2xl": "2rem",
+        "space-lg": "1rem",
+        "space-sm": "0.5rem",
+        "space-xl": "1.5rem",
+        "margin-desktop": "2rem",
+        "space-xs": "0.25rem",
+        "gutter-desktop": "1.5rem"
+      },
+      "fontFamily": {
+        "headline-md": ["IBM Plex Sans"],
+        "headline-lg": ["IBM Plex Sans"],
+        "label-md": ["JetBrains Mono"],
+        "body-lg": ["IBM Plex Sans"],
+        "label-lg": ["IBM Plex Sans"],
+        "body-md": ["IBM Plex Sans"],
+        "body-sm": ["IBM Plex Sans"],
+        "label-sm": ["JetBrains Mono"],
+        "display": ["IBM Plex Sans"],
+        "cadastral-code": ["JetBrains Mono"],
+        "headline-sm": ["IBM Plex Sans"],
+        "headline-lg-mobile": ["IBM Plex Sans"]
+      },
+      "fontSize": {
+        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+        "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+        "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+        "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+        "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "cadastral-code": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between pt-space-md pb-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center gap-space-sm"><div class="w-2.5 h-7 bg-primary rounded"></div><div><span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant block">Sovereign Land Grid</span><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface block">NLAMS Central</span></div></div><div class="px-space-lg"><div class="p-space-sm bg-surface-container-low rounded flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Sovereignty Tier</span><span class="font-label-md text-label-md px-space-xs py-space-2xs bg-surface-container text-on-surface rounded">UNION GOVT</span></div></div><nav class="flex flex-col gap-space-2xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-headline-sm shadow-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="executive-gis-command" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span class="font-body-md text-body-md">Executive GIS Command</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="requisition-and-scrutiny" href="#"><span class="material-symbols-outlined text-[18px]">fact_check</span><span class="font-body-md text-body-md">Requisition &amp; Scrutiny</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded transition-all group bg-primary-container text-on-primary font-headline-sm shadow-sm" data-path="cadastral-gis-studio" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="font-body-md text-body-md">Cadastral GIS Studio</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="compensation-and-dbt" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="font-body-md text-body-md">Compensation &amp; DBT</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="cala-decision-desk" href="#"><span class="material-symbols-outlined text-[18px]">gavel</span><span class="font-body-md text-body-md">CALA Decision Desk</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="p-space-sm bg-surface-container-low rounded flex flex-col gap-space-2xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant">NIC GATEWAY</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><span class="font-cadastral-code text-cadastral-code text-on-surface truncate">SEC-NODE: DL-DEL-NIC-09</span></div><div class="px-space-sm text-center"><span class="font-label-sm text-label-sm text-on-surface-variant">NLAMS v4.8.2-ST</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><img alt="NLAMS Sovereign Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XKvxeR-zIPl4ZC1MRv2M84hUphBD4DaldLQt6h3dPv3U1oZujshWQF2I5a3DRXwXiPiInXVrEMlgfxFEc9izRsor4hnxrsTww6A_9lNZLOt9xLZDydSMWKWqVQHRRutcL12UH9bp-7Ng-iUESia2-LeXhNr6LkoZpFT2mS76yP5MKIYc26DD0oJ_nQc0SNw7mP4oUKVQs4OVKFEqTOhSLB-mbD_bpCt0LLGrm2ZTfZdam9jf8PZi3HEk9I"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface">राष्ट्रीय भूमि अधिग्रहण एवं प्रबंधन प्रणाली</span><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">NLAMS - Sovereign Portal</span></div><div class="h-7 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-2xs rounded"><span class="material-symbols-outlined text-[15px] text-secondary">account_balance</span><span class="font-label-lg text-label-lg text-on-surface">MoRTH / NHAI • Central Nodal Authority</span></div><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-space-2xs rounded"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">NIC Cloud Connected • 28 States &amp; UTs Live</span></div></div><div class="flex items-center gap-space-lg"><div class="relative w-80"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-9 pr-space-sm py-space-xs bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded shadow-[0_1px_3px_0_rgba(11,25,44,0.08)] focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Project ID, DPR No, Khasra, Gazette No..." type="text"/></div><div class="relative flex items-center justify-center p-space-xs rounded hover:bg-surface-container text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></div><div class="h-7 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface">Shri R. K. Sharma, IAS</span><span class="font-label-sm text-label-sm text-on-surface-variant">Joint Secretary - Land Resources</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWWGRJm78yPxfuZoCEEaFykpQWJK-hrZIZ4cnW1MhRN_LCnuoEclFIgv2_k-w-iVbSpIyZJeKN9EhhKpGoZOOC7296JPiu3PZ7MOHc328k_BpC4ezQCtMqsWWzjYBDSmTU4mxGUBT7I_F5HirhEQkyQ3VWsIgfoNgefiBis6bgh-1mv0x6nstahHhIp7HjfK1m6sM4xiZSBDb-gGiQK9faGrrqFIJfbDZ5zeAPprKVzOEYmLtOvKYyiw"/></div></div></header><main class="w-full pt-20 flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-Header Jurisdictional & Workspace Toolbar -->
+<div class="w-full bg-surface-container-low px-space-xl py-space-sm shadow-sm flex flex-col gap-space-sm">
+<!-- Breadcrumb Row -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant flex-wrap">
+<span class="font-label-sm text-label-sm uppercase bg-surface-container px-space-xs py-space-2xs rounded text-secondary font-semibold">Jurisdiction</span>
+<span class="font-body-sm text-body-sm text-on-surface">Maharashtra</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">/</span>
+<span class="font-body-sm text-body-sm text-on-surface">Pune</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">/</span>
+<span class="font-body-sm text-body-sm text-on-surface">Haveli Taluka</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">/</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Wagholi (Rev. Code: 556481)</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_right_alt</span>
+<span class="bg-primary-container text-on-primary font-label-md text-label-md px-space-sm py-space-2xs rounded flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">linear_scale</span>
+          Pune Ring Road Project (East Bypass Package-II)
+        </span>
+</div>
+<!-- Quick Telemetry & Drone Sync Status -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-2xs rounded shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">RTK Fixed (Base: HAV-PUN-04)</span>
+<span class="font-cadastral-code text-cadastral-code text-secondary ml-space-xs">±0.014m</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-2xs rounded shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">flight_takeoff</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DGCA Flight ID: <strong class="text-on-surface">UAV-PRR-0941</strong></span>
+</div>
+</div>
+</div>
+<!-- Active Layers & Vector CAD Palette Toolbar -->
+<div class="flex items-center justify-between flex-wrap gap-space-md pt-space-xs">
+<!-- Active Base Layer Badge -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-xs rounded shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">layers</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Active Survey Layer Composite</span>
+<span class="font-label-lg text-label-lg text-on-surface">High-Res Drone Orthomosaic (5cm GSD) + RoR (7/12) BhuNaksha Vector v4.2</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant ml-space-xs cursor-pointer">tune</span>
+</div>
+<!-- GIS Interactive Tools Palette -->
+<div class="flex items-center bg-surface-container-lowest p-space-2xs rounded shadow-sm gap-space-2xs">
+<button class="p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-container transition-all flex items-center gap-space-2xs" title="Pan Canvas (P)" type="button">
+<span class="material-symbols-outlined text-[18px]">pan_tool</span>
+<span class="font-label-sm text-label-sm">Pan</span>
+</button>
+<button class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-space-2xs" title="Measure Polygon Area (M)" type="button">
+<span class="material-symbols-outlined text-[18px]">square_foot</span>
+<span class="font-label-sm text-label-sm">Measure</span>
+</button>
+<button class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-space-2xs" title="Cadastral Parcel Splitter (S)" type="button">
+<span class="material-symbols-outlined text-[18px]">call_split</span>
+<span class="font-label-sm text-label-sm">Split Parcel</span>
+</button>
+<button class="p-space-xs rounded text-error hover:bg-error-container hover:text-on-error-container transition-all flex items-center gap-space-2xs" title="Flag Encroachment / Deviation (E)" type="button">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span class="font-label-sm text-label-sm">Encroachment</span>
+</button>
+<button class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-space-2xs" title="Add Geotagged Field Photo" type="button">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span class="font-label-sm text-label-sm">Field GeoCam</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest mx-space-2xs"></div>
+<button class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-space-2xs" title="Drone Flight Log / Telemetry" type="button">
+<span class="material-symbols-outlined text-[18px]">history_toggle_off</span>
+<span class="font-label-sm text-label-sm">Flight Logs</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-space-2xs" title="Export Vector GIS Layers" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="font-label-sm text-label-sm font-semibold">Export SHP/GeoJSON</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary Workspace: Split Layout -->
+<div class="w-full grid grid-cols-1 xl:grid-cols-12 gap-space-lg p-space-lg flex-1">
+<!-- LEFT PANE: 65% Interactive Cadastral Canvas (8 of 12 cols on desktop) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Canvas Container -->
+<div class="relative w-full h-[730px] bg-surface-container-highest rounded overflow-hidden shadow-md select-none group">
+<!-- Spatial Imagery Canvas Background with Aerial Simulation -->
+<div class="absolute inset-0 bg-[#0d1821] overflow-hidden">
+<!-- Synthetic High-Res Orthomosaic Texture (Agricultural Fields & RoW) -->
+<svg class="w-full h-full object-cover opacity-85" preserveaspectratio="none" viewbox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Grid pattern for precision GIS -->
+<pattern height="50" id="surveyGrid" patternunits="userSpaceOnUse" width="50">
+<path d="M 50 0 L 0 0 0 50" fill="none" stroke="#253545" stroke-width="0.75"></path>
+<circle cx="50" cy="50" fill="#426086" opacity="0.6" r="1.5"></circle>
+</pattern>
+<!-- Hatch pattern for Litigated parcel 414 -->
+<pattern height="10" id="litigationHatch" patterntransform="rotate(45 0 0)" patternunits="userSpaceOnUse" width="10">
+<line stroke="#ba1a1a" stroke-width="2.5" x1="0" x2="0" y1="0" y2="10"></line>
+</pattern>
+<!-- Gradient for RoW Corridor Buffer -->
+<lineargradient id="rowGradient" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#3b5a7f" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#0e1c2f" stop-opacity="0.35"></stop>
+</lineargradient>
+</defs>
+<!-- Ortho Ground Texture Simulation -->
+<rect fill="#17222d" height="700" width="1000"></rect>
+<rect fill="url(#surveyGrid)" height="700" width="1000"></rect>
+<!-- Agro Field Boundaries Orthophoto Tone patches -->
+<polygon fill="#1b2e23" opacity="0.6" points="40,30 290,20 310,320 20,290"></polygon>
+<polygon fill="#243323" opacity="0.5" points="310,20 620,10 640,340 330,330"></polygon>
+<polygon fill="#292d1e" opacity="0.7" points="630,10 970,30 960,370 650,350"></polygon>
+<polygon fill="#1f2a24" opacity="0.6" points="20,330 330,340 320,680 10,670"></polygon>
+<polygon fill="#182e2c" opacity="0.5" points="340,350 660,360 640,680 330,680"></polygon>
+<polygon fill="#2c271b" opacity="0.6" points="670,370 980,380 970,680 650,680"></polygon>
+<!-- PROPOSED RoW Centerline & 60m Corridor (Blue/Cyan Dashed) -->
+<!-- Outer 60m Corridor Buffer -->
+<polygon fill="url(#rowGradient)" points="0,480 380,310 690,190 1000,90 1000,190 670,290 350,420 0,600" stroke="#aac9f4" stroke-dasharray="6,4" stroke-width="1.5"></polygon>
+<!-- Highway RoW Centerline -->
+<path d="M 0 540 Q 365 365 1000 140" fill="none" stroke="#secondary-container" stroke-dasharray="8,5" stroke-width="2.5"></path>
+<!-- CADASTRAL PARCELS (BhuNaksha Vector Overlay) -->
+<!-- Gat No. 414 (Under High Court Injunction / Red Hatched) -->
+<polygon class="cursor-pointer hover:opacity-90 transition-opacity" fill="url(#litigationHatch)" id="gat-414" points="660,370 960,380 950,660 640,660" stroke="#ba1a1a" stroke-width="2"></polygon>
+<!-- Gat No. 413 (Acquired & Clean Title - Green Filled) -->
+<polygon class="cursor-pointer hover:fill-opacity-45 transition-all" fill="#047857" fill-opacity="0.32" id="gat-413" points="30,40 280,30 300,310 20,280" stroke="#047857" stroke-width="2"></polygon>
+<!-- Gat No. 412/2 (Under Joint Measurement Survey - Amber Filled) -->
+<polygon class="cursor-pointer hover:fill-opacity-50 transition-all" fill="#c76c00" fill-opacity="0.35" id="gat-412-2" points="300,40 610,30 630,330 310,320" stroke="#c76c00" stroke-width="2"></polygon>
+<!-- Gat No. 412/1 [PRIMARY FOCUS: Active Selected Parcel] -->
+<!-- Full Polygon Outline -->
+<polygon fill="#ffdcc3" fill-opacity="0.25" id="gat-412-1" points="330,340 650,350 630,670 315,660" stroke="#ffffff" stroke-dasharray="4,2" stroke-width="2"></polygon>
+<!-- Affected Acquisition Slice in RoW (Solid Highlight with Inset Border) -->
+<polygon class="cursor-pointer" fill="#c76c00" fill-opacity="0.55" points="330,340 650,350 540,490 324,580" stroke="#ffdcc3" stroke-width="2.5"></polygon>
+<!-- Residual Unviable Parcel Section -->
+<polygon fill="#93000a" fill-opacity="0.2" points="324,580 540,490 630,670 315,660" stroke="#c5c6cd" stroke-dasharray="3,3" stroke-width="1.5"></polygon>
+<!-- Cadastral Boundary Node Markers (DGPS Ground Control Points) -->
+<circle cx="330" cy="340" fill="#ffffff" r="4.5" stroke="#0e1c2f" stroke-width="2"></circle>
+<circle cx="650" cy="350" fill="#ffffff" r="4.5" stroke="#0e1c2f" stroke-width="2"></circle>
+<circle cx="630" cy="670" fill="#ffffff" r="4.5" stroke="#0e1c2f" stroke-width="2"></circle>
+<circle cx="315" cy="660" fill="#ffffff" r="4.5" stroke="#0e1c2f" stroke-width="2"></circle>
+<circle cx="540" cy="490" fill="#ffdcc3" r="4.5" stroke="#ba1a1a" stroke-width="2"></circle>
+<!-- Survey Label Text Markers in Mono -->
+<g fill="#ffffff" font-family="JetBrains Mono" font-size="11" font-weight="600">
+<text filter="drop-shadow(0px 1px 2px rgba(0,0,0,0.9))" x="110" y="160">GAT NO. 413 [ACQUIRED]</text>
+<text filter="drop-shadow(0px 1px 2px rgba(0,0,0,0.9))" x="410" y="170">GAT NO. 412/2 [JMR IN-PROGRESS]</text>
+<text fill="#ffdad6" filter="drop-shadow(0px 1px 2px rgba(0,0,0,0.9))" x="730" y="520">GAT NO. 414 [HC WRIT STAY]</text>
+<text fill="#ffffff" filter="drop-shadow(0px 1px 3px rgba(0,0,0,1))" font-size="13" x="390" y="420">★ GAT NO. 412/1</text>
+<text fill="#ffdcc3" font-size="10" x="390" y="440">Acq. Slice: 9,200 m² (50%)</text>
+<text fill="#ffffff" font-size="10" opacity="0.8" x="390" y="590">Residual: 1,400 m² (Severance)</text>
+</g>
+<!-- RoW Centerline Distance Station Tags -->
+<text fill="#aac9f4" font-family="JetBrains Mono" font-size="10" x="18" y="560">CH 24+400</text>
+<text fill="#aac9f4" font-family="JetBrains Mono" font-size="10" x="490" y="320">CH 24+800</text>
+<text fill="#aac9f4" font-family="JetBrains Mono" font-size="10" x="890" y="160">CH 25+200</text>
+</svg>
+<!-- Top-Left Floating HUD: Coordinates & Compass -->
+<div class="absolute top-space-md left-space-md bg-surface-container-lowest/90 backdrop-blur-md p-space-sm rounded shadow-md flex items-center gap-space-md text-on-surface">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">N</div>
+<span class="font-cadastral-code text-cadastral-code">004.2° MAG</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">CROSSHAIR DGPS COORD</span>
+<span class="font-cadastral-code text-cadastral-code text-on-surface">18°34'52.32" N • 73°59'04.20" E</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ELEV:</span>
+<span class="font-cadastral-code text-cadastral-code">572.4m MSL</span>
+</div>
+</div>
+<!-- Bottom-Left GIS Map Legend -->
+<div class="absolute bottom-space-md left-space-md bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-sm rounded shadow-md flex items-center gap-space-md flex-wrap text-on-surface">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Statutory Cadastral Key:</span>
+<div class="flex items-center gap-space-xs">
+<div class="w-3.5 h-3.5 rounded bg-secondary-container"></div>
+<span class="font-label-sm text-label-sm">Acquired / Clean</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-3.5 h-3.5 rounded bg-tertiary-fixed-dim"></div>
+<span class="font-label-sm text-label-sm">Active JMR Verification</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-3.5 h-3.5 rounded bg-error-container"></div>
+<span class="font-label-sm text-label-sm">Litigation / HC Injunction</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="w-5 h-0.5 border border-dashed border-secondary"></div>
+<span class="font-label-sm text-label-sm">60m RoW Alignment</span>
+</div>
+</div>
+<!-- Floating Interactive Callout (Hovering Over Gat No. 412/1) -->
+<div class="absolute top-[38%] left-[45%] w-80 bg-surface-container-lowest rounded shadow-xl p-space-md transform -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs bg-surface-container-low -mx-space-md -mt-space-md px-space-md py-space-xs rounded-t">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">PARCEL CALLOUT #412/1</span>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-space-xs py-space-2xs rounded font-semibold">UNDER JMR</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Gross Holding:</span>
+<span class="font-cadastral-code text-cadastral-code font-bold text-on-surface">1.84 Ha (18,400 m²)</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-error font-body-sm font-semibold">Affected in RoW:</span>
+<span class="font-cadastral-code text-cadastral-code font-bold text-error">0.92 Ha (9,200 m²) [50.0%]</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Classification:</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Bagayat (Irrigated Cash Crop)</span>
+</div>
+<div class="flex justify-between items-start text-body-sm pt-space-2xs">
+<span class="text-on-surface-variant font-body-sm">Primary Khatedar:</span>
+<span class="font-body-sm text-body-sm text-on-surface text-right font-medium">Vithal Tukaram Shinde<br/><span class="text-on-surface-variant font-label-sm">(+3 Registered Co-Sharers)</span></span>
+</div>
+</div>
+<!-- Pointer Arrow Down to Parcel Pin -->
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface-container-lowest rotate-45"></div>
+</div>
+<!-- Bottom-Right Floating Drone Live Inspection Thumbnail -->
+<div class="absolute bottom-space-md right-space-md w-72 bg-surface-container-lowest/95 backdrop-blur-md rounded shadow-xl overflow-hidden">
+<div class="p-space-xs bg-primary-container text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed">videocam</span>
+<span class="font-label-sm text-label-sm font-semibold">Drone Nadir Field Feed</span>
+</div>
+<span class="font-cadastral-code text-[10px] text-tertiary-fixed">5cm GSD</span>
+</div>
+<div class="relative w-full h-36 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High angle ultra-detailed aerial orthophoto drone capture of lush Indian agricultural plots bordered by irrigation ditches and mango groves under bright morning sunlight, cadastral survey crosshair overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb539h-U986a8d74lltPEumDwhEAmQa2l6E2lIBJ97Y0UZkK94No8sj-_iAtQmfD3C_MReIqZRfI7mywPLR5G3wxR-nI27jNReQ1I-ptMvLZrshkRR6kTc7QX71Bu3HfF7uD5FOCeqyohtgtrVqx_wSEIWtBEDNVq_Ho_5UVZtbmx_gs3425PSOwRI5XJs0ucT6lI1JgDfV89wpMWeSgtNlMijQictajUBxaVlSB7VITB9lGwBkp6bUg"/>
+<!-- Drone HUD overlay elements -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+<div class="absolute top-1 left-2 text-[10px] font-cadastral-code text-white drop-shadow">
+                LAT: 18.5812° N • LON: 73.9845° E
+              </div>
+<div class="absolute bottom-1 left-2 text-[10px] font-cadastral-code text-white drop-shadow">
+                14-APR-2025 10:45 AM IST • ALT: 118m
+              </div>
+<div class="absolute top-1 right-2 w-2 h-2 rounded-full bg-error animate-pulse"></div>
+</div>
+<div class="p-space-xs bg-surface-container-low flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ground Truth Check:</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">MATCH 99.4% RoR 7/12</span>
+</div>
+</div>
+<!-- Top-Right Floating Map Tool Controls -->
+<div class="absolute top-space-md right-space-md flex flex-col gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md p-space-xs rounded shadow-md">
+<button class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-on-surface" title="Zoom In" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-on-surface" title="Zoom Out" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<div class="h-px w-full bg-surface-container-highest"></div>
+<button class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-on-surface" title="Reset Tilt 3D / Ortho 2D" type="button">
+<span class="material-symbols-outlined text-[20px]">3d_rotation</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-on-surface" title="Center on Ring Road Alignment" type="button">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-on-surface" title="Fullscreen GIS Canvas" type="button">
+<span class="material-symbols-outlined text-[20px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Operational Metrics Strip for Wagholi Package -->
+<div class="w-full grid grid-cols-2 sm:grid-cols-4 gap-space-md bg-surface-container-lowest p-space-md rounded shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Total Package Parcels</span>
+<span class="font-headline-md text-headline-md text-on-surface">184 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Gats</span></span>
+<span class="font-label-sm text-label-sm text-secondary">162 RoR Linked (88.0%)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">JMR Field Cleared</span>
+<span class="font-headline-md text-headline-md text-secondary">114 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Parcels</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">61.9% Alignment Ready</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Disputed / HC Enjoined</span>
+<span class="font-headline-md text-headline-md text-error">9 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Parcels</span></span>
+<span class="font-label-sm text-label-sm text-error">12.4 Ha Corridor Held</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Calculated Sec 3G Award</span>
+<span class="font-headline-md text-headline-md text-on-surface">₹48.2 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">Cr</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct PFMS Ready</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: 35% Cadastral Parcel Dossier & Joint Measurement Report (4 of 12 cols on desktop) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Dossier Primary Container -->
+<div class="w-full bg-surface-container-lowest rounded shadow-md flex flex-col">
+<!-- Dossier Title Bar -->
+<div class="p-space-md bg-surface-container-low rounded-t flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase bg-primary-container text-on-primary px-space-xs py-space-2xs rounded">Rev Code 556481</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Survey Sec 19(1)</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-space-2xs">Gat No. 412/1</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Taluka: Haveli • Village: Wagholi (District: Pune)</span>
+</div>
+<span class="font-label-md text-label-md px-space-sm py-space-2xs bg-secondary-container text-on-secondary-fixed rounded uppercase font-semibold">
+            JMR STAGE-3
+          </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-lg">
+<!-- Statutory Land Classification & Valuation Breakdown -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Land Extent &amp; Severance Matrix</span>
+<span class="font-cadastral-code text-cadastral-code text-secondary">Sec 94 RFCTLARR</span>
+</div>
+<!-- Precision Metric Cards -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Total RoR 7/12 Area</span>
+<span class="font-cadastral-code text-headline-sm text-on-surface block">18,400 m²</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1.84 Hectare</span>
+</div>
+<div class="p-space-sm bg-error-container/40 rounded">
+<span class="font-label-sm text-label-sm text-on-error-container block">Acquisition Slice (RoW)</span>
+<span class="font-cadastral-code text-headline-sm text-on-error-container font-bold block">9,200 m²</span>
+<span class="font-label-sm text-label-sm text-on-error-container font-semibold">50.00% Impacted</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-high rounded flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Severance Residual Parcel (North End)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unviable for mechanical agriculture (&lt;15 Gunthas)</span>
+</div>
+<div class="text-right">
+<span class="font-cadastral-code text-cadastral-code font-bold text-on-surface block">1,400 m²</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Eligible Full Buyout</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm px-space-xs">
+<span class="text-on-surface-variant">Retained Viable Holding (South):</span>
+<span class="font-cadastral-code text-cadastral-code font-semibold text-on-surface">7,800 m² (0.78 Ha)</span>
+</div>
+</div>
+<!-- Structure & Horticulture Valuation (Attached Assets) -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Attached Assets &amp; Structural Census</span>
+<div class="space-y-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">nature</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">42 Mature Alphonso Mango Trees</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Age: 12-14 yrs • Dept. of Horticulture Gov Val.</span>
+</div>
+</div>
+<span class="font-cadastral-code text-body-md font-bold text-on-surface">₹3,12,000</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">water_drop</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">1 Operational Agricultural Borewell</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Depth: 480ft • 7.5HP Submersible Pump</span>
+</div>
+</div>
+<span class="font-cadastral-code text-body-md font-bold text-on-surface">₹1,85,000</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">home_work</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">RCC Pump House Structure</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Plinth: 140 sq.ft • PWD Evaluated Plinth</span>
+</div>
+</div>
+<span class="font-cadastral-code text-body-md font-bold text-on-surface">₹98,400</span>
+</div>
+</div>
+</div>
+<!-- Multi-Agency Joint Measurement Verification Signatures -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Statutory Sign-Offs (JMR Schedule)</span>
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-sm rounded">
+<!-- Signer 1: Revenue Talathi / Patwari -->
+<div class="flex items-center justify-between py-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Shri S. V. Kadam (Talathi - Wagholi)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Revenue Dept. • Token #MH-PUN-8491</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-space-2xs rounded font-semibold text-secondary">DIGITALLY SIGNED</span>
+</div>
+<div class="h-px bg-surface-container-highest"></div>
+<!-- Signer 2: Survey Agency / MSRDC GIS Officer -->
+<div class="flex items-center justify-between py-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Er. Priyanka Nair (GIS Surveyor)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">MSRDC DGPS Survey Cell • Lic #2021/GIS/44</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-space-2xs rounded font-semibold text-secondary">DGPS VERIFIED</span>
+</div>
+<div class="h-px bg-surface-container-highest"></div>
+<!-- Signer 3: Landowner Aadhaar OTP / Consent -->
+<div class="flex items-center justify-between py-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Vithal Tukaram Shinde (Khatedar)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aadhaar OTP Auth (UIDAI Ref: **9218)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-fixed px-space-xs py-space-2xs rounded font-semibold">CONSENT LOGGED</span>
+</div>
+</div>
+</div>
+<!-- Operational Statutory Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full py-space-sm bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded shadow-sm hover:bg-on-secondary-container transition-all flex items-center justify-center gap-space-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+              Generate Form-E (JMR Certificate)
+            </button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-space-sm bg-surface-container-high text-on-surface font-label-lg text-label-lg rounded hover:bg-surface-container-highest transition-all flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">flag</span>
+                Flag Discrepancy
+              </button>
+<button class="py-space-sm bg-secondary text-on-secondary font-label-lg text-label-lg rounded hover:bg-on-secondary-container transition-all flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+                Push to Award Ledger
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Field Survey Verification Photo Evidence -->
+<div class="w-full bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Geotagged Survey Site Snaps</span>
+<span class="font-cadastral-code text-cadastral-code text-on-surface-variant">3 Field Snaps</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="relative h-20 bg-surface-container rounded overflow-hidden group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Field surveyor measuring agricultural plot boundary with high-precision yellow DGPS RTK antenna rover on tripod next to concrete survey milestone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBy2qzu2ZZJvTe2QZyPA_k0H9WPy0TGU7CkpNGM88VPxsQxnEYVKgLaufDtBYVcYyzvDE3ISolis2yXPNnCD2u3bj2TPGuuNtL2DufNolcmfh0_1PflRdgIJa4ICnzKNz0QYbi3advitxrgiCwSrNwgnmWc0s6umXfTruGextSqavgi0eqgCv-JkKfR6L-jNssZqbBn8cbe8fcG_4kuigkH05-gwawUAqMgCTRQj4bJ6jMPsCAmtH-sw"/>
+<span class="absolute bottom-1 left-1 bg-black/70 text-white font-cadastral-code text-[9px] px-1 rounded">CP-01</span>
+</div>
+<div class="relative h-20 bg-surface-container rounded overflow-hidden group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Agricultural mango orchard showing mature fruit trees marked with red forestry spray paint boundary markers for infrastructure corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdjWHOGFsnsXMY6Sb4_6QMb4HYfikiFmN7UTQPF_ZncxWUdgkOt7AjYEXGpZeE0Q2sP7doxGGdqtedRH5nYapAkqgw2iG6aqqVLFQXBdhVl3meuovkKZlKiIPEp29kbf9W4ZgcJGeYK2XsCoBmYEgWBZFhdwvegqajrj7XDt3Ydk3m3pYJtOTtMe-z7DqcRhcz67cIS_Ws0BeOGYWO_38xR4mRnYPmrMAl8DFYF7pkYHS0z79Ly9THIQ"/>
+<span class="absolute bottom-1 left-1 bg-black/70 text-white font-cadastral-code text-[9px] px-1 rounded">TR-42</span>
+</div>
+<div class="relative h-20 bg-surface-container rounded overflow-hidden group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Indian revenue Patwari in khaki jacket reviewing paper cadastral map on table with local farmers in a rural tehsil office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkH3uNq1NYBeVGC3kn6NEWAIkzTzgfJ_WOp7WoRM8tMBHWl3GVtpTW7-a2xm7956zdBAOnoEDynAoZ0_Pqxq0TIE-Pahel_dFyewemS4v3Kyqc7rLxCzX4YS0a843oGEmTGrEOLxKcXsMdG7ORcgLKsd-FdKifBOlJ3r2fvTpmVMHfbygQU49iOZ8SxKNrMIlj2VRLuwGFI63G1UnjJwxZ0I5O2XSaW7Rkf_FioFVmqCUat5aDi_ygnw"/>
+<span class="absolute bottom-1 left-1 bg-black/70 text-white font-cadastral-code text-[9px] px-1 rounded">PUMP-01</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interactions for GIS Parcel Inspection
+  document.addEventListener('DOMContentLoaded', () => {
+    const parcels = ['gat-413', 'gat-412-2', 'gat-414', 'gat-412-1'];
+    parcels.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('mouseenter', () => {
+          el.style.filter = 'brightness(1.15)';
+        });
+        el.addEventListener('mouseleave', () => {
+          el.style.filter = 'none';
+        });
+      }
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-sm px-space-xl border-t-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>LARR Act 2013 &amp; RFCTLARR Rules Compliant</span><div class="h-3 w-px bg-surface-container-highest"></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">account_balance_wallet</span>PFMS Portal Gateway Active</span><div class="h-3 w-px bg-surface-container-highest"></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">shield</span>GeM / NIC Security Certified</span></div><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant">Ministry of Rural Development &amp; MoRTH • Government of India</span></div></div></footer></div></body></html>
