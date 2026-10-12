@@ -10,8 +10,8 @@ export default function Login() {
   const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  const [serviceId, setServiceId] = useState('');
-  const [password, setPassword] = useState('');
+  const [serviceId, setServiceId] = useState('DC-MH-NANDURBAR');
+  const [password, setPassword] = useState('INDIa@114');
   const [loginLoading, setLoginLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
